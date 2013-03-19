@@ -1,21 +1,21 @@
 === DealDotCom Widgets ===
-<<<<<<< HEAD
-Contributors: Denis-de-Bernardy
-Tags:
-=======
 Contributors: Denis-de-Bernardy, Mike_Koepke
 Donate link: http://www.semiologic.com/partners/
 Tags: dealdotcom, marketing, internet-marketing, monetize, money, adsense, widget, semiologic
->>>>>>> origin/orig-code
 Requires at least: 2.8
 Tested up to: 3.5.1
 Stable tag: trunk
 
+Dealdotcom is a great place to look for deals on internet marketing related materials.
 
 
 == Description ==
 
-No longer supported
+The Dealdotcom plugin for WordPress introduces widgets that let you insert [Dealdotcom](http://go.semiologic.com/dealdotcom)'s deal of the day on your site.
+
+In the event you're unfamiliar with it, Dealdotcom is a great place to look for deals on internet marketing related materials, and this widget is a great way to collect commissions if you run a site related to the topic.
+
+After activating the plugin, browse Appearance / Widgets. Insert one or more Dealdotcom widgets, configure your affiliate ID in each, and you're done.
 
 = Help Me! =
 
@@ -32,9 +32,6 @@ If you require more dedicated assistance, consider using [Semiologic Pro](http:/
 
 == Change Log ==
 
-<<<<<<< HEAD
-No longer supported
-=======
 = 2.0.1 =
 
 - WP 3.5 compat
@@ -45,4 +42,3 @@ No longer supported
 - SSL support
 - WP_Widget class
 - Code enhancements and optimizations
->>>>>>> origin/orig-code

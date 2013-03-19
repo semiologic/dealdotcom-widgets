@@ -1,8 +1,5 @@
 <?php
 /*
-<<<<<<< HEAD
-Version: 1.0.1
-=======
 Plugin Name: Dealdotcom Widgets
 Plugin URI: http://www.semiologic.com/software/dealdotcom/
 Description: Widgets that let you display <a href="http://go.semiologic.com/dealdotcom">Dealdotcom</a>'s deal of the day.
@@ -11,18 +8,8 @@ Author: Denis de Bernardy, Mike Koepke
 Author URI: http://www.getsemiologic.com
 Text Domain: deadotcom-widgets
 Domain Path: /lang
->>>>>>> origin/orig-code
 */
-// obsolete file
 
-<<<<<<< HEAD
-$active_plugins = get_option('active_plugins');
-
-if ( !is_array($active_plugins) )
-{
-	$active_plugins = array();
-}
-=======
 /*
 Terms of use
 ------------
@@ -233,23 +220,66 @@ class dealdotcom extends WP_Widget {
 	 *
 	 * @return array
 	 **/
->>>>>>> origin/orig-code
 
-foreach ( (array) $active_plugins as $key => $plugin )
-{
-	if ( $plugin == 'dealdotcom-widgets.php' )
-	{
-		unset($active_plugins[$key]);
-		break;
-	}
-}
+	function defaults() {
+		return array(
+			'aff_id' => '',
+			);
+	} # defaults()
+	
+	
+	/**
+	 * upgrade()
+	 *
+	 * @param array $ops
+	 * @return array $ops
+	 **/
 
-if ( !in_array('dealdotcom-widgets/dealdotcom-widgets.php', $active_plugins) )
-{
-	$active_plugins[] = 'dealdotcom-widgets/dealdotcom-widgets.php';
-}
+	function upgrade($ops) {
+		$widget_contexts = class_exists('widget_contexts')
+			? get_option('widget_contexts')
+			: false;
+		
+		foreach ( $ops as $k => $o ) {
+			$ops[$k] = array(
+				'aff_id' => $o['aff_id']
+				);
+			if ( isset($widget_contexts['dealdotcom-' . $k]) ) {
+				$ops[$k]['widget_contexts'] = $widget_contexts['dealdotcom-' . $k];
+			}
+		}
+		
+		return $ops;
+	} # upgrade()
+	
+	
+	/**
+	 * upgrade_1_0()
+	 *
+	 * @param array $ops
+	 * @return array $ops
+	 **/
 
-sort($active_plugins);
+	function upgrade_1_0($ops) {
+		$widget_contexts = class_exists('widget_contexts')
+			? get_option('widget_contexts')
+			: false;
+		
+		if ( !empty($ops['aff_id']) ) {
+			$ops = array(
+				'aff_id' => $ops['aff_id']
+				);
+			if ( isset($widget_contexts['dealdotcom-2']) ) {
+				$ops['widget_contexts'] = $widget_contexts['dealdotcom-2'];
+			}
+		} else {
+			$ops = array();
+		}
+		
+		return $ops;
+	} # upgrade_1_0()
+} # dealdotcom
 
-update_option('active_plugins', $active_plugins);
+add_action('widgets_init', array('dealdotcom', 'widgets_init'));
+add_action('dealdotcom_update', array('dealdotcom', 'update_deal'));
 ?>
