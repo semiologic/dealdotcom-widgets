@@ -1,9 +1,9 @@
 === DealDotCom Widgets ===
-Contributors: Denis-de-Bernardy
+Contributors: Denis-de-Bernardy, Mike_Koepke
 Donate link: http://www.semiologic.com/partners/
 Tags: dealdotcom, marketing, internet-marketing, monetize, money, adsense, widget, semiologic
 Requires at least: 2.8
-Tested up to: 3.2.1
+Tested up to: 3.5.1
 Stable tag: trunk
 
 Dealdotcom is a great place to look for deals on internet marketing related materials.
@@ -27,10 +27,14 @@ If you require more dedicated assistance, consider using [Semiologic Pro](http:/
 == Installation ==
 
 1. Upload the plugin folder to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
+2. Activate the plugin through the 'Plugins' menu in WordPress
 
 
 == Change Log ==
+
+= 2.0.1 =
+
+- WP 3.5 compat
 
 = 2.0 =
 

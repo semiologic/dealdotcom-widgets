@@ -3,8 +3,8 @@
 Plugin Name: Dealdotcom Widgets
 Plugin URI: http://www.semiologic.com/software/dealdotcom/
 Description: Widgets that let you display <a href="http://go.semiologic.com/dealdotcom">Dealdotcom</a>'s deal of the day.
-Version: 2.0
-Author: Denis de Bernardy
+Version: 2.0.1
+Author: Denis de Bernardy, Mike Koepke
 Author URI: http://www.getsemiologic.com
 Text Domain: deadotcom-widgets
 Domain Path: /lang
@@ -26,6 +26,7 @@ load_plugin_textdomain('dealdotcom-widgets', false, dirname(plugin_basename(__FI
 /**
  * dealdotcom
  *
+ * @property int|string alt_option_name
  * @package DealDotCom Widgets
  **/
 
@@ -145,7 +146,7 @@ class dealdotcom extends WP_Widget {
 	/**
 	 * update_deal()
 	 *
-	 * @return void
+	 * @return bool|string
 	 **/
 
 	function update_deal() {
@@ -154,7 +155,7 @@ class dealdotcom extends WP_Widget {
 		$deal = wp_remote_fopen($url);
 		
 		if ( $deal ) {
-			list($name, $price, $image) = split("<br>", $deal);
+			list($name, $price, $image) = explode("<br>", $deal);
 			$name = trim($name);
 			$price = trim($price);
 			$image = trim($image);
@@ -217,7 +218,7 @@ class dealdotcom extends WP_Widget {
 	/**
 	 * defaults()
 	 *
-	 * @return void
+	 * @return array
 	 **/
 
 	function defaults() {
