@@ -1,6 +1,12 @@
 === DealDotCom Widgets ===
+<<<<<<< HEAD
 Contributors: Denis-de-Bernardy
 Tags:
+=======
+Contributors: Denis-de-Bernardy, Mike_Koepke
+Donate link: http://www.semiologic.com/partners/
+Tags: dealdotcom, marketing, internet-marketing, monetize, money, adsense, widget, semiologic
+>>>>>>> origin/orig-code
 Requires at least: 2.8
 Tested up to: 3.5.1
 Stable tag: trunk
@@ -26,4 +32,17 @@ If you require more dedicated assistance, consider using [Semiologic Pro](http:/
 
 == Change Log ==
 
+<<<<<<< HEAD
 No longer supported
+=======
+= 2.0.1 =
+
+- WP 3.5 compat
+
+= 2.0 =
+
+- Localization
+- SSL support
+- WP_Widget class
+- Code enhancements and optimizations
+>>>>>>> origin/orig-code
