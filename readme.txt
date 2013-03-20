@@ -26,4 +26,6 @@ If you require more dedicated assistance, consider using [Semiologic Pro](http:/
 
 == Change Log ==
 
+= 2.0.1 =
+
 No longer supported

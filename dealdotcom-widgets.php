@@ -1,7 +1,14 @@
 <?php
 /*
-Version: 1.0.1
+Plugin Name: Dealdotcom Widgets
+Plugin URI: http://www.semiologic.com/software/dealdotcom/
+Description: This plugin is no longer in development.
+Version: 2.0.1
+Author: Denis de Bernardy
+Author URI: http://www.getsemiologic.com
+
 */
+
 // obsolete file
 
 $active_plugins = get_option('active_plugins');
