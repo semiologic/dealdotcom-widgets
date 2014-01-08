@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Dealdotcom Widgets
+xPlugin Name: Dealdotcom Widgets
 Plugin URI: http://www.semiologic.com/software/dealdotcom/
 Description: This plugin is no longer in development.
 Version: 2.0.1
@@ -20,16 +20,11 @@ if ( !is_array($active_plugins) )
 
 foreach ( (array) $active_plugins as $key => $plugin )
 {
-	if ( $plugin == 'dealdotcom-widgets.php' )
+	if ( $plugin == 'dealdotcom-widgets/dealdotcom-widgets.php' )
 	{
 		unset($active_plugins[$key]);
 		break;
 	}
-}
-
-if ( !in_array('dealdotcom-widgets/dealdotcom-widgets.php', $active_plugins) )
-{
-	$active_plugins[] = 'dealdotcom-widgets/dealdotcom-widgets.php';
 }
 
 sort($active_plugins);
